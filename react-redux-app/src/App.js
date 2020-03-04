@@ -1,12 +1,15 @@
 import React from 'react';
 import Quotes from './components/Quotes';
 import './App.css';
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
 function App() {
   return (
-    <div className="App">
-    <h1>React Redux App!</h1>
+    <div>
+    <h1 id='header'>Random Quote Generator</h1>
+    <Jumbotron fluid className='main'>
     <Quotes />
+    </Jumbotron>
     </div>
   );
 }

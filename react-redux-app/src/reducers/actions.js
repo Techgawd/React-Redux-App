@@ -7,9 +7,9 @@ export const getQuote = () => dispatch => {
     dispatch({ type: FETCHING_QUOTE_START });
 
     axios
-      .get('https://api.kanye.rest')
+      .get('https://api.quotable.io/random')
       .then(res => {
-        dispatch({ type: FETCHING_QUOTE_SUCCESS, payload: res.data.quote});
+        dispatch({ type: FETCHING_QUOTE_SUCCESS, payload: res.data.content});
       })
       .catch(err => {
         dispatch({ type: FETCHING_QUOTE_FAILURE, payload: `${err.response.message} with response code ${

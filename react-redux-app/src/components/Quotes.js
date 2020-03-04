@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getQuote } from '../reducers/actions';
+import Button from 'react-bootstrap/Button';
 
 const Quotes = ({ getQuote, quote, isFetching, error }) => {
     if (isFetching) {
@@ -8,8 +9,8 @@ const Quotes = ({ getQuote, quote, isFetching, error }) => {
     }
     return (
         <div>
-            <h2>Quote: {quote}</h2>
-            <button onClick={getQuote}>Get new quotes</button>
+            <h2> {quote}</h2>
+            <Button variant="warning" size="lg" block onClick={getQuote}>Get new quote</Button>
         </div>
     )
 };
